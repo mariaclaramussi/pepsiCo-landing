@@ -1,0 +1,230 @@
+@font-face {
+  font-family: "Gotham-Bold";
+  font-weight: 700;
+  src: url("/fonts/GothamBold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Gotham-Book";
+  font-weight: 700;
+  src: url("/fonts/Gotham-Book.ttf") format("ttf"),
+    url("/fonts/GOTHAM-BOOK.OTF") format("otf");
+}
+
+@font-face {
+  font-family: "Gotham-Black", sans-serif;
+  font-weight: 900;
+  src: url("/fonts/Gotham-Black.ttf") format("ttf"),
+    url("/fonts/GOTHAM-BLACK.OTF") format("otf");
+}
+
+h2 {
+  font-family: "Gotham-Black", sans-serif;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+p {
+  font-size: 1em;
+  color: #fff;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card.yellow {
+  background-color: #ffda00;
+  color: #0075b4;
+  min-height: 198px;
+}
+
+.card.blue {
+  background-color: #004480;
+  color: #0075b4;
+  min-height: 198px;
+}
+
+a.subscribe {
+  font-family: "Gotham-Black", sans-serif;
+  font-weight: 900;
+  font-size: 2em;
+  line-height: 35px;
+  text-transform: uppercase;
+  color: #ffda00;
+  display: block;
+  margin-bottom: 16px;
+}
+
+header {
+  height: 72px;
+  background-color: #fff;
+}
+
+header img {
+  max-width: 126px;
+}
+
+header ul {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+}
+
+header ul li {
+  display: inline-block;
+  padding: 0 12px;
+}
+
+header ul li a {
+  font-family: "Gotham-Black", sans-serif;
+  font-weight: 900;
+  font-size: 0.8em;
+  color: #004480;
+  text-transform: uppercase;
+}
+
+#intro {
+  height: calc(100vh - 72px);
+  background-color: #00a6e8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#about {
+  background-color: #00a6e8;
+  padding: 100px 0;
+  color: #fff;
+}
+
+#about p {
+  max-width: 667px;
+}
+
+#about hr {
+  border-top: 4px solid #fff;
+  max-width: 120px;
+  margin-left: 0;
+}
+
+#about h3 {
+  font-family: "Gotham-Black", sans-serif;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  font-size: 1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+#about ul {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  list-style: none;
+}
+
+#about ul li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+#numbers {
+  background-color: #0075b4;
+  padding: 65px 0;
+}
+
+#numbers .content-cards {
+  margin-top: 40px;
+  margin-bottom: 48px;
+  display: flex;
+}
+
+#numbers .content-cards .card {
+  border-radius: 20px;
+}
+
+#numbers .content-cards .col-md-3 {
+  padding-left: 0;
+  padding-right: 30px;
+}
+
+#numbers .second-description {
+  font-family: "Gotham-Black", sans-serif;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+#like-this {
+  background-color: #004480;
+  padding: 56px 0;
+}
+
+#like-this .card {
+  border-radius: 24px;
+}
+
+#trail {
+  background-color: #00a6e8;
+  padding: 100px 0;
+}
+
+#trail .container-cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 64px;
+}
+
+#trail .container-cards .card {
+  width: 100%;
+  max-width: 222px;
+  min-height: 350px;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+#advantages {
+  background-color: #0075b4;
+  padding: 72px 0;
+}
+
+#advantages ul li {
+  color: #fff;
+}
+
+#tips {
+  background-color: #004480;
+  padding-top: 72px;
+  height: 662px;
+  position: relative;
+}
+
+#tips .card {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+#subscribe {
+  background-color: #00a6e8;
+  padding-top: 245px;
+  padding-bottom: 68px;
+  text-align: center;
+}
+
+footer {
+  height: 100px;
+}
