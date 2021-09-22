@@ -1,21 +1,22 @@
 @font-face {
   font-family: "Gotham-Bold";
   font-weight: 700;
-  src: url("/fonts/GothamBold.ttf") format("ttf");
+  src: url("/fonts/Gotham-Bold.ttf") format("ttf"),
+    url("/fonts/Gotham-Bold.otf") format("otf");
 }
 
 @font-face {
   font-family: "Gotham-Book";
-  font-weight: 700;
+  font-weight: 400;
   src: url("/fonts/Gotham-Book.ttf") format("ttf"),
-    url("/fonts/GOTHAM-BOOK.OTF") format("otf");
+    url("/fonts/Gotham-Book.otf") format("otf");
 }
 
 @font-face {
   font-family: "Gotham-Black", sans-serif;
   font-weight: 900;
   src: url("/fonts/Gotham-Black.ttf") format("ttf"),
-    url("/fonts/GOTHAM-BLACK.OTF") format("otf");
+    url("/fonts/Gotham-Black.otf") format("otf");
 }
 
 h2 {
@@ -24,12 +25,14 @@ h2 {
   color: #fff;
   margin: 0;
   font-size: 1.5em;
+  line-height: 120%;
   text-transform: uppercase;
   margin-bottom: 16px;
 }
 
 p {
-  font-size: 1em;
+  font-size: 16px;
+  line-height: 140%;
   color: #fff;
 }
 
@@ -42,8 +45,11 @@ p {
 
 .card.yellow {
   background-color: #ffda00;
-  color: #0075b4;
   min-height: 198px;
+}
+
+.card.yellow p {
+  color: #0075b4;
 }
 
 .card.blue {
@@ -66,6 +72,12 @@ a.subscribe {
   border-bottom: 4px solid #ffda00;
   transition: 0.2s;
   text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+a.subscribe.center {
+  margin: 0 auto;
 }
 
 a.subscribe:hover {
@@ -133,10 +145,32 @@ header .header-subscribe {
 #intro {
   height: calc(100vh - 72px);
   background-color: #00a6e8;
+  background-size: 100% 100%;
+  position: relative;
+  padding-top: 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+}
+
+#intro .bg-intro {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 1520px) {
+  #intro .bg-intro {
+    height: 1000px;
+  }
+}
+
+@media only screen and (min-width: 1650px) {
+  #intro .bg-intro {
+    height: 1200px;
+  }
 }
 
 #intro .align-images-intro {
@@ -149,6 +183,27 @@ header .header-subscribe {
 #intro .align-images-intro img:last-child {
   margin-left: 24px;
   margin-top: -12px;
+}
+
+#intro .people-intro-img {
+  z-index: 10;
+}
+
+#intro .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#intro .align-intro-text {
+  width: 50%;
+}
+
+#intro .people-intro-img {
+  position: absolute;
+  right: 60px;
+  top: 20px;
+  width: 47%;
 }
 
 #intro h1 {
@@ -171,10 +226,24 @@ header .header-subscribe {
   margin: 0 0 25px 0;
 }
 
+/* ABOUT */
+
 #about {
   background-color: #00a6e8;
-  padding: 100px 0;
+  padding: 200px 0 100px 0;
   color: #fff;
+}
+
+@media only screen and (min-width: 1400px) {
+  #about {
+    padding: 300px 0 100px 0;
+  }
+}
+
+@media only screen and (min-width: 1650px) {
+  #about {
+    padding: 500px 0 100px 0;
+  }
 }
 
 #about p {
@@ -209,9 +278,22 @@ header .header-subscribe {
   padding: 0 10px;
 }
 
+#about ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffda00;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* NUMBERS */
+
 #numbers {
   background-color: #0075b4;
-  padding: 65px 0;
+  padding: 65px 0 87px 0;
+  position: relative;
 }
 
 #numbers .content-cards {
@@ -224,9 +306,35 @@ header .header-subscribe {
   border-radius: 20px;
 }
 
+#numbers .content-cards .card h3 {
+  font-family: "Gotham-Black", sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0075b4;
+  margin-bottom: 8px;
+  font-weight: 900;
+}
+
+#numbers .content-cards .card p {
+  font-family: "Gotham-Book", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
 #numbers .content-cards .col-md-3 {
   padding-left: 0;
   padding-right: 30px;
+}
+
+#numbers .subscribe {
+  margin-bottom: 60px;
 }
 
 #numbers .second-description {
@@ -235,20 +343,119 @@ header .header-subscribe {
   color: #fff;
   margin: 0;
   font-size: 1.5em;
+  line-height: 140%;
+  margin-top: 32px;
 }
+
+#numbers img {
+  z-index: 10;
+  position: relative;
+}
+
+#numbers .dots-position {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  z-index: 1;
+}
+
+/* LIKE THIS */
 
 #like-this {
   background-color: #004480;
-  padding: 56px 0;
+  padding: 56px 0 135px 0;
+  position: relative;
+}
+
+#like-this .like-this-image {
+  position: absolute;
+  top: -32px;
+  right: 0;
 }
 
 #like-this .card {
   border-radius: 24px;
+  margin-top: 60px;
+  z-index: 10;
+  padding: 48px;
+  position: relative;
+  margin-bottom: 48px;
 }
+
+#like-this .card img.arrow-svg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+#like-this .card h3 {
+  font-family: "Gotham-Black", sans-serif;
+  font-weight: 900;
+  color: #004480;
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 120%;
+  margin-top: 16px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+#like-this .card .check-text {
+  font-family: "Gotham-Book", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  color: #004480;
+}
+
+#like-this .speach-author {
+  color: #004480;
+  margin-bottom: 24px;
+  margin-top: 12px;
+  font-family: "Gotham-Book", sans-serif;
+  font-weight: 400;
+}
+
+#like-this .align-author {
+  display: flex;
+}
+
+#like-this .align-author img {
+  margin-right: 16px;
+}
+
+#like-this .align-author p {
+  font-family: "Gotham-Book", sans-serif;
+  font-weight: 400;
+  color: #004480;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* TRAILS */
 
 #trail {
   background-color: #00a6e8;
-  padding: 100px 0;
+  padding: 160px 0 100px 0;
+  position: relative;
+  text-align: center;
+}
+
+#trail .torcidas-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  object-fit: cover;
+  transform: translateY(-50%);
+}
+
+#trail p {
+  max-width: 760px;
+  margin: auto;
 }
 
 #trail .container-cards {
@@ -260,42 +467,271 @@ header .header-subscribe {
 
 #trail .container-cards .card {
   width: 100%;
-  max-width: 222px;
+  max-width: 220px;
   min-height: 350px;
   border-radius: 16px;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+#trail .container-cards .card img:first-child {
+  align-self: flex-start;
+}
+
+#trail .container-cards .card img:last-child {
+  align-self: flex-end;
+}
+
+#trail .container-cards .card.blue p {
+  text-align: left;
+  margin: 0;
+  max-width: 175px;
+}
+
+#trail .container-cards .card.yellow p {
+  font-family: "Gotham-Black", sans-serif;
+  font-weight: 900;
+  color: #004480;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 120%;
+  margin: 0;
+}
+
+/* ADVANTAGES */
 
 #advantages {
   background-color: #0075b4;
   padding: 72px 0;
 }
 
+#advantages .row:first-child,
+#advantages .row:nth-child(2) {
+  margin-bottom: 50px;
+}
+
+#advantages ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 #advantages ul li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 140%;
   color: #fff;
 }
+
+#advantages ul li:before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffda00;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(50%);
+}
+
+#advantages .card.description {
+  padding: 60px;
+  border-radius: 24px;
+}
+
+#advantages .card.description p {
+  text-align: center;
+  font-family: "Gotham-Book", sans-serif;
+  font-weight: 400;
+  color: #004480;
+  font-size: 18px;
+  line-height: 140%;
+  max-width: 772px;
+  margin: 0;
+}
+
+#advantages .container-cards {
+  margin-bottom: 56px;
+}
+
+#advantages .container-cards .card {
+  min-height: 452px;
+  border-radius: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 32px 24px;
+}
+
+#advantages .card ul li {
+  font-size: 15px;
+  line-height: 120%;
+}
+
+#advantages .card h3 {
+  font-family: "Gotham-Black", sans-serif;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 120%;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+/* TIPS */
 
 #tips {
   background-color: #004480;
   padding-top: 72px;
   height: 662px;
+  text-align: center;
+}
+
+#tips .container {
   position: relative;
+  height: 100%;
+}
+
+#tips .description {
+  max-width: 780px;
+  margin: auto;
 }
 
 #tips .card {
   position: absolute;
+  border-radius: 24px;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
+  width: 100%;
 }
+
+#tips .card .row {
+  position: relative;
+  height: 100%;
+  padding: 48px;
+}
+
+#tips .card h3 {
+  font-family: "Gotham-Black", sans-serif;
+  font-weight: 900;
+  color: #004480;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 120%;
+  margin: 0;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+#tips .card p {
+  font-family: "Gotham-Book", sans-serif;
+  font-weight: 400;
+  color: #004480;
+  font-size: 16px;
+  line-height: 140%;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+#tips .card a {
+  font-family: "Gotham-Black", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #004480;
+  display: block;
+  max-width: 170px;
+  padding: 10px;
+  border-bottom: 4px solid #004480;
+  text-align: center;
+  position: relative;
+  margin: 0;
+}
+
+#tips .card a:hover {
+  text-decoration: none;
+}
+
+#tips .card img {
+  position: absolute;
+  right: 96px;
+  bottom: 0;
+}
+
+/* SUBSCRIBE */
 
 #subscribe {
   background-color: #00a6e8;
-  padding-top: 245px;
+  padding-top: 200px;
   padding-bottom: 68px;
   text-align: center;
 }
 
-footer {
+#subscribe h2 {
+  font-family: "Gotham-Black", sans-serif;
+  font-weight: 900;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+#subscribe p {
+  font-family: "Gotham-Book", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+/* FOOTER */
+
+footer .container-footer {
+  width: 100%;
   height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .container-footer img {
+  height: 29px;
+}
+
+.container-footer ul {
+  display: inline-block;
+}
+
+.container-footer ul li {
+  display: inline-block;
+  padding: 0 8px;
+}
+
+.container-footer ul li img {
+  height: 16px;
+}
+
+footer .black-footer {
+  text-align: center;
+  height: 56px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .black-footer p {
+  margin: 0;
+  font-size: 10px;
+  color: #fff;
+  font-weight: 900;
 }
