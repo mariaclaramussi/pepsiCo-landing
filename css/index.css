@@ -629,6 +629,7 @@ header .menu-icon .navicon:after {
   padding: 48px;
   position: relative;
   margin-bottom: 48px;
+  transition: 0.4s;
 }
 
 #like-this .card img.arrow-svg {
@@ -674,6 +675,8 @@ header .menu-icon .navicon:after {
 
 #like-this .align-author img {
   margin-right: 16px;
+  max-width: 40px;
+  object-fit: contain;
 }
 
 #like-this .align-author p {
@@ -682,6 +685,16 @@ header .menu-icon .navicon:after {
   color: #004480;
   margin: 0;
   font-size: 1em;
+}
+
+#like-this .owl-theme .owl-dots .owl-dot span {
+  background: #00a6e8;
+  opacity: 0.4;
+}
+
+#like-this .owl-theme .owl-dots .owl-dot.active span {
+  background: #004480;
+  opacity: 1;
 }
 
 @media screen and (max-width: 767px) {
@@ -697,14 +710,18 @@ header .menu-icon .navicon:after {
     display: none;
   }
 
-  #like-this .col-md-7.align-image {
-    justify-content: center;
-  }
-  #like-this .col-md-7.align-image .like-this-img {
+  #like-this .card .row {
     width: 100%;
   }
 
-  #like-this .col-md-7.align-image {
+  #like-this .col-md-6.align-image {
+    justify-content: center;
+  }
+  #like-this .col-md-6.align-image .like-this-img {
+    width: 100%;
+  }
+
+  #like-this .col-md-6.align-image {
     margin-top: 32px;
   }
 
@@ -855,6 +872,7 @@ header .menu-icon .navicon:after {
   #trail .torcidas-image.mobile {
     display: block;
   }
+
   #trail .container-cards .card .front img:first-child {
     max-width: 80px;
   }
